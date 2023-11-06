@@ -1,0 +1,60 @@
+version: "2"
+services:
+   namenode:
+      image: flokkr/hadoop:latest
+      hostname: namenode
+      command: ["hdfs", "namenode"]
+      ports:
+         - 50070:50070
+         - 9870:9870
+      env_file:
+        - hadoop.env
+      environment:
+          ENSURE_NAMENODE_DIR: "/tmp/hadoop-hadoop/dfs/name"
+   datanode1:
+      image: flokkr/hadoop:latest
+      command: ["hdfs", "datanode"]
+      hostname: localhost
+      ports:
+        - 9864:9864
+      links:
+         - namenode
+      env_file:
+        - hadoop.env
+      volumes:
+        - ./jars/hadoop-mapreduce-examples-3.3.6.jar:/opt/hadoop/hadoop-mapreduce-examples-3.3.6.jar
+        - ./jars/hadoop-streaming-3.3.6.jar:/opt/hadoop/hadoop-streaming-3.3.6.jar
+        - ./python:/opt/hadoop/python
+        - ./inputdata:/opt/hadoop/inputdata
+   datanode2:
+      image: flokkr/hadoop:latest
+      command: ["hdfs", "datanode"]
+      links:
+         - namenode
+      env_file:
+        - hadoop.env
+   datanode3:
+      image: flokkr/hadoop:latest
+      command: ["hdfs", "datanode"]
+      links:
+         - namenode
+      env_file:
+        - hadoop.env
+   resourcemanager:
+      image: flokkr/hadoop:latest
+      hostname: resourcemanager
+      command: ["yarn", "resourcemanager"]
+      ports:
+         - 8088:8088
+      env_file:
+        - hadoop.env
+      volumes:
+        - ./inputdata:/opt/inputdata
+   nodemanager:
+      image: flokkr/hadoop:latest
+      command: ["yarn","nodemanager"]
+      links:
+         - resourcemanager
+         - namenode
+      env_file:
+        - hadoop.env
