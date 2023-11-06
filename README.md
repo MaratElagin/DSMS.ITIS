@@ -31,7 +31,7 @@ STORED AS TEXTFILE;
  `describe formatted products;`
  6. Fill table from csv file
  `load data local inpath '/opt/hive/products.csv' overwrite into table products;`
- 7. SQL-query:
+ 7. SQL-query: Средняя цена по категории, у товаров, которые купили хотя бы 1 раз за последний месяц и звезд больше 4
  ```
 SELECT categoryName, AVG(CAST(price AS DECIMAL)) AS avg_price
 FROM products
