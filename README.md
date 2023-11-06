@@ -23,7 +23,7 @@ categoryName STRING
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
 'separatorChar' = ',',
-'quoteChar' = ‘\”’
+'quoteChar' = '\"'
 )
 STORED AS TEXTFILE;
  ```
