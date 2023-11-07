@@ -5,11 +5,11 @@ from pulsar.schema import JsonSchema
 import psycopg2
 
 # Загрузка секретных данных из secrets.json.
-with open('secrets/secrets.json', 'r') as secrets_file:
+with open('python/secrets/secrets.json', 'r') as secrets_file:
     db_connection_string = json.load(secrets_file)["db_params"]
 
 # Скрипт создания таблицы Weather.
-with open('weatherTableInit.sql', 'r') as sql_file:
+with open('python/weatherTableInit.sql', 'r') as sql_file:
     create_weather_table = sql_file.read()
 
 

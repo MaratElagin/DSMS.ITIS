@@ -11,5 +11,5 @@
 10. Run producer and consumer. Send messages
 11.  See postgres weather table.
 12. Verify schema versions:
-- First schema: `/pulsar/bin/pulsar-admin schemas get --version 0 persistent://public/default/weather-topic`
-- Second schema:`/pulsar/bin/pulsar-admin schemas get persistent://public/default/weather-topic`
+- First schema: `/pulsar/bin/pulsar-admin schemas get --version 0 persistent://public/default/weather`
+- Second schema:`/pulsar/bin/pulsar-admin schemas get persistent://public/default/weather`

@@ -16,6 +16,7 @@ try:
             wind_speed = float(line.split()[1])
         except (IndexError):
             temperature = int(line.split()[0])
+            wind_speed = None
         
         weather_message = WeatherMessage(id = id, temperature = temperature, wind_speed = wind_speed)
 
