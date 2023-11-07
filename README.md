@@ -31,10 +31,14 @@ STORED AS TEXTFILE;
  `describe formatted products;`
  6. Fill table from csv file
  `load data local inpath '/opt/hive/products.csv' overwrite into table products;`
- 7. SQL-query: Средняя цена по категории, у товаров, которые купили хотя бы 1 раз за последний месяц и звезд больше 4
+ 7. SQL-query:
  ```
 SELECT categoryName, AVG(CAST(price AS DECIMAL)) AS avg_price
 FROM products
 WHERE CAST(boughtInLastMonth AS INTEGER) > 0 AND CAST(stars AS DECIMAL) > 4.0
 GROUP BY categoryName;
  ```
+
+[**Dataset link**](https://www.kaggle.com/datasets/asaniczka/amazon-uk-products-dataset-2023)
+
+[**Screencast link**](https://drive.google.com/file/d/1IJVP_42OdPEehKUPM96gKObCTYBNt8Vm/view?usp=sharing)
