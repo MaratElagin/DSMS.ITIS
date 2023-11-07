@@ -6,7 +6,7 @@ from pulsar.schema import JsonSchema
 client = pulsar.Client('pulsar://localhost:6650')
 
 try: 
-    producer = client.create_producer('weather-topic', schema=JsonSchema(WeatherMessage))
+    producer = client.create_producer('weather', schema=JsonSchema(WeatherMessage))
     
     id = 1
     for line in sys.stdin:

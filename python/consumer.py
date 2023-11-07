@@ -50,7 +50,7 @@ try:
     consumer = client.subscribe(
                     topic='weather-topic',
                     subscription_name='my-subscription',
-                    schema=JsonSchema(WeatherMessage) )
+                    schema=JsonSchema(WeatherMessage))
 
     while True:
         weather_message = consumer.receive()
