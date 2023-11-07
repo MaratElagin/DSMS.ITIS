@@ -13,3 +13,6 @@
 12. Verify schema versions:
 - First schema: `/pulsar/bin/pulsar-admin schemas get --version 0 persistent://public/default/weather`
 - Second schema:`/pulsar/bin/pulsar-admin schemas get persistent://public/default/weather`
+
+
+[**Screencast link**](https://drive.google.com/file/d/1y8lWEFJHNPLiKvcEnmr5Tmxz3d0ex_MD/view?usp=drive_link)
