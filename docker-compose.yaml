@@ -1,0 +1,24 @@
+version: '3.0'
+
+services:
+  pulsar:
+    container_name: pulsar
+    image: apachepulsar/pulsar-all:latest
+    ports:
+      - '8080:8080'
+      - '6650:6650'
+    command: bin/pulsar standalone
+    volumes:
+      - ./connector-config.yaml:/connector-config.yaml
+
+  clickhouse:
+    image: bitnami/clickhouse:latest
+    volumes:
+      - clickhouse-volume:/bitnami/clickhouse
+    ports:
+      - '8123:8123'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
+volumes:
+  clickhouse-volume: {}
