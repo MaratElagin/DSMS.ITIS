@@ -12,6 +12,7 @@ services:
       - ./connector-config.yaml:/connector-config.yaml
 
   clickhouse:
+    container_name: clickhouse
     image: bitnami/clickhouse:latest
     volumes:
       - clickhouse-volume:/bitnami/clickhouse
