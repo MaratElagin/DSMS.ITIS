@@ -5,5 +5,5 @@ inputs: ["persistent://public/default/weather-topic"]
 sinkType: "jdbc-clickhouse"
 configs:
   jdbcUrl: "jdbc:clickhouse://clickhouse:8123/default"
-  tableName: "orders"
+  tableName: "weather"
   useTransactions: "false"
