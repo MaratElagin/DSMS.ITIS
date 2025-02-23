@@ -1,3 +1,7 @@
+Introduction to Apache Pulsar, work with flow data (producer-consumer) and save data to PostgreSQL.
+Experiment with Schema Registry: change json contract in runtime.
+
+
 1. run pulsar cluster: `docker-compose up -d`
 2. Run producer: `python3 python/producer.py`
 3. Run consumer: `python3 python/consumer.py`
@@ -15,4 +19,4 @@
 - Second schema:`/pulsar/bin/pulsar-admin schemas get persistent://public/default/weather`
 
 
-[**Screencast link**](https://drive.google.com/file/d/1y8lWEFJHNPLiKvcEnmr5Tmxz3d0ex_MD/view?usp=drive_link)
+[**Screencast link**](https://youtu.be/O6mDzwUSp1g)
