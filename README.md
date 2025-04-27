@@ -16,3 +16,5 @@
 Run sql script `databaseInit.sql`
 4.  Run producer, send some data
 5. Ensure that data inserts automatically to clickhouse
+
+[Screencast](https://youtu.be/d8eMq4OsuTY)
