@@ -41,4 +41,4 @@ GROUP BY categoryName;
 
 [**Dataset link**](https://www.kaggle.com/datasets/asaniczka/amazon-uk-products-dataset-2023)
 
-[**Screencast link**](https://drive.google.com/file/d/1IJVP_42OdPEehKUPM96gKObCTYBNt8Vm/view?usp=sharing)
+[**Screencast link**](https://youtu.be/amr8CONBUAI)
